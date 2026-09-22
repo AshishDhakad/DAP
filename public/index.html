@@ -439,7 +439,7 @@ let me="",msgs=[],q="",tab="files",lastCount=-1;
 
 // show allowed users on the login screen
 fetch('/api/users').then(r=>r.json()).then(d=>{
-  $("hint").textContent="Allowed: "+d.users.join(", ");
+  $("hint").textContent="Allowed: "; //+d.users.join(", ")
 }).catch(()=>{ $("hint").textContent="Could not reach the server."; });
 
 $("go").onclick=login;
