@@ -178,7 +178,7 @@ app.post('/api/messages', wrap(async (req, res) => {
 
   if (!user) return res.status(400).json({ error: 'user is required' });
   if (!text) return res.status(400).json({ error: 'text is required' });
-  if (text.length > 4000) return res.status(400).json({ error: 'message too long' });
+  if (text.length > 10485) return res.status(400).json({ error: 'message too long' });
 
   const valid = await userExists(user);
   if (!valid) return res.status(403).json({ error: 'unknown user — please log in again' });
